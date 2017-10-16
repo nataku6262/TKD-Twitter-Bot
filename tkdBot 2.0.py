@@ -5,6 +5,7 @@ from tkdTweets_Lib import * #library of tweets GW created
 from tkdTrainingTweets import *
 from tweetKeys import * #twitter dev keys GW created
 from datetime import datetime
+from datetime import timedelta
 from time import sleep
 import schedule, time, sched
 
@@ -96,12 +97,12 @@ def findFollowers ():
 task = sched.scheduler (time.time, time.sleep)
 
 
-schedule.every().monday.at('17:15').do(tkdTrainingDayBot())
-schedule.every().tuesday.at('18:30').do(tkdTwitterBot())
-schedule.every().wednesday.at('17:10').do(tkdTrainingDayBot())
-schedule.every().friday.at('18:00').do(tkdTwitterBot())
-schedule.every().saturday.at('13:00').do(tkdTwitterBot())
-schedule.every().sunday.at('13:00').do(findFollowers())
+schedule.every().monday.at('17:15').do(tkdTrainingDayBot)
+schedule.every().tuesday.at('18:30').do(tkdTwitterBot)
+schedule.every().wednesday.at('17:10').do(tkdTrainingDayBot)
+schedule.every().friday.at('18:00').do(tkdTwitterBot)
+schedule.every().saturday.at('13:00').do(tkdTwitterBot)
+#schedule.every().sunday.at('13:00').do(findFollowers)
 
 while True:
     schedule.run_pending()

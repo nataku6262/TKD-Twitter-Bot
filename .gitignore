@@ -45,4 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Exclusion List
 tkdBot.py
+tweetKeys.py
+__pycache__/
+.gitignore
